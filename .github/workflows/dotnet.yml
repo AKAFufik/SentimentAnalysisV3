@@ -27,4 +27,4 @@ jobs:
       run: dotnet build --configuration Release
     
     - name: Run unit tests
-      run: dotnet test --no-build --configuration Release SentimentAnalysisV2Tests/SentimentAnalysisV2Tests.csproj /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+      run: dotnet test --no-build --configuration Release SentimentAnalysisV2Tests/SentimentAnalysisV2Tests.csproj /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=json
