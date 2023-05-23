@@ -26,11 +26,5 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
     
-   
-    - name: Install Coveralls report generator
-      run: dotnet tool install --global coveralls.net
-
-    - name: Generate Coveralls report
-      run: coveralls.net --opencover -i SentimentAnalysisV2Tests/coverage.opencover.xml --useRelativePaths
-
-
+    - name: Run unit tests
+      run: dotnet test SentimentAnalysisV2Tests/SentimentAnalysisV2Tests.csproj
