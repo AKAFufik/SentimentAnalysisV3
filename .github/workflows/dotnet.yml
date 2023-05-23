@@ -30,6 +30,6 @@ jobs:
       run: dotnet test --no-build --verbosity normal --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=json /p:CoverletOutputDirectory=TestResults/Coverage/
       
     - name: Upload coverage to Coveralls
-      run: dotnet tool install --global coveralls.net --version 2.3.0 && coveralls.net --opencover -i ./TestResults/Coverage/coverage.json --useRelativePaths
+      run: dotnet tool install --global coveralls.net --version 3.0.0 && ~/.dotnet/tools/csmacnz.Coveralls --opencover -i ./TestResults/Coverage/coverage.json --useRelativePaths
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
