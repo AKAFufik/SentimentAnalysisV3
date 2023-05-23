@@ -27,7 +27,7 @@ jobs:
       run: dotnet build --configuration Release
     
     - name: Run unit tests
-      run: dotnet test --no-build --verbosity normal --configuration Release SentimentAnalysisV2Tests/SentimentAnalysisV2Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=json /p:CoverletOutputDirectory=TestResults/Coverage/
+      run: dotnet test --no-build --verbosity normal --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=json /p:CoverletOutputDirectory=TestResults/Coverage/
       
     - name: Upload coverage to Coveralls
       run: dotnet tool install --global coveralls.net --version 2.3.0 && coveralls.net --opencover -i ./TestResults/Coverage/coverage.json --useRelativePaths
